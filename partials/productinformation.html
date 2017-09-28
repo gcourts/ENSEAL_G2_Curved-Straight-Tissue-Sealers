@@ -1,0 +1,227 @@
+<!--
+Copyright (C) 2017 eProSoft America Inc - All Rights Reserved.
+
+All information contained herein is, and remains the property of eProSofrt America Inc. The intellectual and technical concepts contained herein are proprietary to eProSoft America Inc and may be covered by U.S. and Foreign Patents, patents in process, and are protected by trade secret or copyright law. Dissemination, Appropriation or Redistribution of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained from eProSoft America Inc
+-->
+
+<script>
+    $(document).ready(function () {
+
+        $('li[data-toggle="tab"]').on('shown.bs.tab', function () {
+            $('.late').hide();
+        });
+        $('li[data-target="#portTab2"],  li[data-target="#portTab5"], li[data-target="#tab2"]').on('shown.bs.tab', function (e) {
+            $('video:visible').each(function () {
+                $(this).get(0).play();
+                $(this).get(0).pause();
+                $(this).get(0).currentTime = 0;
+            $('#animation-video').get(0).play();
+
+            });
+            angular.element('.jaw-left').show();
+            angular.element('.jaw-right').show();
+            angular.element('.sticking-right').show();
+            angular.element('.sticking-left').show();
+            $('.video-container').find('.blinker').removeClass('hide');
+        });
+        $('.li[data-target="#tab2"]').on('shown.bs.tab',function(e){            
+                $('video:visible').each(function () {
+                $(this).get(0).play();
+                $(this).get(0).pause();
+                $(this).get(0).currentTime = 0;
+            });
+        });
+    });
+</script>
+<div role="tabpanel">
+    <div class="tab-content">
+        <div id="tab1" role="tabpanel" class="tab-pane fade in active">
+            <div style="position: relative;">
+                <img style="position: absolute; top: 0; left: 0;" src="images/product_information/features/bg.png" alt="features" width="1024" height="540" />
+                <img style="position: absolute; top: 0; left: 0;" width="1024" height="540" ng-src="{{img_url}}" ng-if="img_url" />
+                <div> 
+                    <div class="blinkbtn0 dots" ng-class="{
+                                active : img_url === 'images/product_information/features/overlays/0.png'
+                            }" ng-click="img_url = (img_url === 'images/product_information/features/overlays/0.png') ? undefined : 'images/product_information/features/overlays/0.png'"></div>
+                    <div class="blinkbtn1 dots" ng-class="{
+                                active : img_url === 'images/product_information/features/overlays/1.png'
+                            }" ng-click="img_url = (img_url === 'images/product_information/features/overlays/1.png') ? undefined : 'images/product_information/features/overlays/1.png'"></div>
+                    <div class="blinkbtn2 dots" ng-class="{
+                                active : img_url === 'images/product_information/features/overlays/2.png'
+                            }" ng-click="img_url = (img_url === 'images/product_information/features/overlays/2.png') ? undefined : 'images/product_information/features/overlays/2.png'"></div>
+                    <div class="blinkbtn3 dots" ng-class="{
+                                active : img_url === 'images/product_information/features/overlays/3.png'
+                            }" ng-click="img_url = (img_url === 'images/product_information/features/overlays/3.png') ? undefined : 'images/product_information/features/overlays/3.png'"></div>
+                    <div class="blinkbtn4 dots" ng-class="{
+                                active : img_url === 'images/product_information/features/overlays/4.png'
+                            }" ng-click="img_url = (img_url === 'images/product_information/features/overlays/4.png') ? undefined : 'images/product_information/features/overlays/4.png'"></div>
+                    <div class="blinkbtn5 dots" ng-class="{
+                                active : img_url === 'images/product_information/features/overlays/5.png'
+                            }" ng-click="img_url = (img_url === 'images/product_information/features/overlays/5.png') ? undefined : 'images/product_information/features/overlays/5.png'"></div>
+                </div>
+            </div>
+        </div>
+        <div id="tab2" role="tabpanel" class="tab-pane fade">
+            <div class="tab-content">
+                <div id="portTab1" class="tab-pane fade in active text-center">
+                    <div style="position: relative;">
+                        <!--                        <img style="position: absolute; top: 0; left: 0;" ng-src=" {{'images/product_information/secure_sealing/secure_sealing/' + ((img_url1 || img_url2 || img_url3) ? 'bg2.png' : 'bg.png')}} " alt="features" width="1024" height="560"/>-->
+                        <video width="1005" height="570" id="animation-video">
+                            <source src="videos/product_information/secure_sealing/secure_sealing/strong_and_gentle.mp4" />
+                        </video>
+                        <img style="position: absolute; top: 0; left: 0;" width="1024" height="560" ng-src="{{img_url1}}"  ng-if="img_url1" />
+                        <img style="position: absolute; top: 0; left: 0;" width="1024" height="560" ng-src="{{img_url2}}"  ng-if="img_url2" />
+                        <img style="position: absolute; top: 0; left: 0;" width="1024" height="560" ng-src="{{img_url3}}"  ng-if="img_url3" />
+                        <div>  
+                            <div class="blinkbtn6 dots" ng-class="{
+                                        active : img_url1 === 'images/product_information/secure_sealing/secure_sealing/overlays/0.png'
+                                    }" ng-click="img_url1 = (img_url1 === 'images/product_information/secure_sealing/secure_sealing/overlays/0.png') ? undefined : 'images/product_information/secure_sealing/secure_sealing/overlays/0.png'"></div>
+                            <div class="blinkbtn7 dots" ng-class="{
+                                        active : img_url2 === 'images/product_information/secure_sealing/secure_sealing/overlays/1.png'
+                                    }" ng-click="img_url2 = (img_url2 === 'images/product_information/secure_sealing/secure_sealing/overlays/1.png') ? undefined : 'images/product_information/secure_sealing/secure_sealing/overlays/1.png'"></div>
+                            <div class="blinkbtn8 dots" ng-class="{
+                                        active : img_url3 === 'images/product_information/secure_sealing/secure_sealing/overlays/2.png'
+                                    }" ng-click="img_url3 = (img_url3 === 'images/product_information/secure_sealing/secure_sealing/overlays/2.png') ? undefined : 'images/product_information/secure_sealing/secure_sealing/overlays/2.png'"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="portTab2" class="tab-pane fade text-center">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h2 class="col-sm-6">ENSEAL&reg; G2 Curved</h2>
+                            <h2 class="col-sm-6">LigaSure&trade; 5mm</h2>
+                            <div class="image-poster">                               
+                                <video id="jaw-left"  src="videos/product_information/seal_through_jaw/consistency_through_jaw.mp4">   </video>
+                                <img class="jaw-left" style="position: absolute; left: 275px; bottom: 70px;" src="images/product_information/secure_sealing/consistency_of_seal_through_jaw/play_icon.png" alt=""/>
+                                <img class="jaw-right" style="position: absolute; right: 270px; bottom: 70px;" src="images/product_information/secure_sealing/consistency_of_seal_through_jaw/play_icon.png" alt=""/>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="top-space">Superior end-to-end sealing vs. LigaSure&trade; 5mm<sup>1</sup></h3>
+                    <div class="text-left">                       
+                        <p style="margin-bottom: 0;">1. In a preclinical study utilizing an animate porcine mesentary model, ENSEAL&reg; G2 Curved and Straight had significantly less bleeding from the seal line than LigaSure&trade; 5mm
+                            (3.8% vs. 24%), p=0.012. Data on file Ethicon Endo-Surgery. Inc<br/>
+                            LigSure&trade; 5mm is a trademark of Covidien</p>
+                    </div>
+                </div>
+                <div id="portTab3" class="tab-pane fade">
+                    <h3>More than twice the compression at the distal tip of the jaw than LigaSure&trade; 5mm<sup>1</sup></h3>
+                    <div class="row">
+                        <div class="col-sm-7 video-container">
+                            <video id="impact_video" width="530" height="196">
+                                <source src="videos/product_information/secure_sealing/compression/ligasure_compression/eagle_compression_ligasure.mp4" type="video/mp4">
+                            </video>
+                            <img  eta-touchstart="playButton($event, 'impact_video')" class="img-responsive impact_glow impact_video_blinker blinker" src="images/product_information/secure_sealing/compression/ligasure_compression_glow/00024.png" alt="" />
+                            <video  class="video-embed"  id="super_video" width="530" height="196">
+                                <source src="videos/product_information/secure_sealing/compression/eagle_compression/eagle_compression_eagle.mp4" type="video/mp4">
+                            </video>
+                            <img eta-touchstart="playButton($event, 'super_video')" class="img-responsive super_glow super_video_blinker blinker" src="images/product_information/secure_sealing/compression/eagle_compression_glow/eagleHandleGlow.png" alt="" />
+                        </div>
+                        <div id="graph-container">
+                            <div class="text-center graph-scale-container">
+                                <p class="graph-text" >Side-by-side benchtop testing, average compression of jaws used in ENSEAL&reg; G2 Curved and LigaSure&trade; 5mm.</p>
+                                <img class="close-btn hide" src="images/close_button.png" alt="">
+                                <div class="graph-image">
+                                    <p>Average Compression (psi)</p>
+                                    <div id="video_graph" ></div>
+                                    <div class="graph_bg_gray gray"></div>
+                                    <div class="graph_bg_red red"></div></div>
+                                <p class="graph-footer">Jaw Position</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h6 style="margin-top: 0px; width: 72vw;">1. In a side-by-side benchtop testing, average compression of distal 0.11 in of jaws used in ENSEAL&reg; G2 Curved was 187 psi (standard deviation 81 psi) and ENSEAL&reg; G2
+                        Straight was 104 psi (standard deviation 8 psi) for LigaSure&trade; 5mm p<0.0000.<br/>
+                        LigaSure&trade; 5mm is a trademark of Covidien<br/>
+                        Data on file. Ethicon Endo-Surgery, Inc.
+                    </h6>
+                    <img class="video_reset" src="images/restart.png" alt="" />                    
+                </div>
+                <div id="portTab4" class="tab-pane fade image-laod text-center">
+                    <div ng-include="'partials/consistencysealover.html'"></div>                    
+                </div>
+                <div id="portTab5" class="tab-pane fade text-center">
+                    <div class="row">
+                        <div  class="col-sm-12">
+                            <h2 class="col-sm-6">ENSEAL&reg; G2 Curved</h2>
+                            <h2 class="col-sm-6">LigaSure&trade; 5mm</h2>
+                            <div class="image-poster1">                                
+                                <video id="sticking-left">
+                                    <source src="videos/product_information/less_sticking/less_sticking.mp4"/>
+                                </video>
+                                <img class="sticking-left" style="position: absolute; left: 245px; bottom: 70px;" src="images/product_information/secure_sealing/consistency_of_seal_through_jaw/play_icon.png" alt=""/>
+                                <img class="sticking-right" style="position: absolute; right: 245px; bottom: 70px;" src="images/product_information/secure_sealing/consistency_of_seal_through_jaw/play_icon.png" alt=""/>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="top-space">Less sticking over multiple activations than LigaSure&trade; 5mm<sup>1</sup></h3>
+                    <div class="text-left">                       
+                        <p style="margin-bottom: 0;">1. Based on numbers of tissue sticking events during continuos resection of porcine mesentary modal over 5minutes of use. ENSEAL&reg; G2 Curved and Straight had a sticking rate of 1.6% 
+                            or less vs 10.6% to LigaSure&trade; 5mm, p<0.001.<br/>
+                            LigSure&trade; 5mm is a trademark of Covidien</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Better Grip Nav tabs -->
+            <div class="thirdLevelTabs" role="tabpanel">
+                <ul class="redroundtabs" role="tablist">
+                    <li class="proptab  active animation-video-tab" data-toggle="tab" data-target="#portTab1"><a role="tab" data-toggle="tab" data-target="#portTab1" class="ui-btn-active"><span>Secure Sealing</span></a></li>
+                    <li class="proptab video-tab" data-toggle="tab" data-target="#portTab2" ><a role="tab" data-toggle="tab" data-target="#portTab2"><span>Consistency of Seal Through Jaw</span></a></li>
+                    <li class="proptab video-tab" data-toggle="tab" data-target="#portTab3"><a role="tab" data-toggle="tab" data-target="#portTab3"><span>Compression</span></a></li>
+                    <li class="proptab graph-tab" data-toggle="tab" data-target="#portTab4"><a role="tab" data-toggle="tab" data-target="#portTab4"><span>Consistency of Seal Over Multiple Activations</span></a></li>
+                    <li class="proptab video-tab" data-toggle="tab" data-target="#portTab5"><a role="tab" data-toggle="tab" data-target="#portTab5"><span>Less Sticking</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="tab3" role="tabpanel" class="tab-pane fade text-center">
+            <script type="text/ng-template" id="myModalContent.html">
+                <div class="modal-body">
+                <a class="v-close" ng-click="ok()"><img style="float:right;" src="images/close_button.png" /></a>
+                <video width="568" id="modalVid" controls>
+                <source id="video-autoplay" src="{{videoUrl}}" />
+                </video>
+                <p>{{videoInfo}}</p>
+                </div>
+            </script>
+            <h2 class="vert-offset-top-2">Versatility</h2>
+            <div class="addsteps">
+                <div class="top-img">
+                    <div class="imageContainer">
+                        <img ng-class="{
+                                    active : 'active'
+                                }" src="images/product_information/versatility/3.jpg"  ng-click="open('md', 'videos/product_information/versatility/SpotCoagGrasping.mp4', 'videotext');"/>
+                        <p>Spot Coag - Grasping</p>
+                    </div>
+                    <div class="imageContainer">
+                        <img ng-class="{
+                                    active : 'active'
+                                }"  src="images/product_information/versatility/2.jpg"  ng-click="open('md', 'videos/product_information/versatility/SpotCoagOpenJaw.mp4', 'videotext');"/>
+                        <p>Spot Coag - Open Jaws</p>
+                    </div>
+                </div>
+                <div class="top-img">
+                    <div class="imageContainer">
+                        <img class="" ng-class="{
+                                    active : 'active'
+                                }"  src="images/product_information/versatility/4.jpg" ng-click="open('md', 'videos/product_information/versatility/OtomyDrilling.mp4', 'videotext');"/> 
+                        <p>Otomy Creation / Drilling</p>
+                    </div>
+                    <div class="imageContainer">
+                        <img class="" ng-class="{
+                                    active : 'active'
+                                }"  src="images/product_information/versatility/5.jpg" ng-click="open('md', 'videos/product_information/versatility/VersatileSealing.mp4', 'videotext');"/> 
+                        <p>Versatile Sealing Cycle</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="submenu" role="tabpanel">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="mytab active" data-toggle="tab" data-target="#tab1"><a data-target="#tab1"  role="tab" data-toggle="tab" class="ui-btn-active"><span>Features</span></a></li>
+            <li role="presentation" class="mytab animation-video-tab" data-toggle="tab" data-target="#tab2"><a data-target="#tab2" role="tab" data-toggle="tab"><span>Secure Sealing</span></a></li>
+            <li role="presentation" class="mytab" data-toggle="tab" data-target="#tab3"><a data-target="#tab3" role="tab" data-toggle="tab"><span>Versatility</span></a></li>
+        </ul>
+    </div>
+</div>

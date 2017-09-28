@@ -1,0 +1,70 @@
+<!--
+Copyright (C) 2017 eProSoft America Inc - All Rights Reserved.
+
+All information contained herein is, and remains the property of eProSofrt America Inc. The intellectual and technical concepts contained herein are proprietary to eProSoft America Inc and may be covered by U.S. and Foreign Patents, patents in process, and are protected by trade secret or copyright law. Dissemination, Appropriation or Redistribution of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained from eProSoft America Inc
+-->
+
+<!DOCTYPE html>
+<html ng-app="curvedStraightApp">
+    <head>
+        <title>ENSEAL&reg; G2 Curved & Straight</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="css/jquery-ui.min.css" />
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/ngDialog/ngDialog.min.css">
+        <link rel="stylesheet" href="css/ngDialog/ngDialog-theme-default.min.css">
+    </head>
+    <body ng-controller="MainController">
+        <div class="header"><h1 class="apptitle">ENSEAL&reg; G2 Curved & Straight</h1></div>
+        <nav class="navbar navbar-default navbar-fixed-bottom energy-navbar">
+            <div class="container-fluid">
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="energy-navbar">
+                    <ul class="nav navbar-nav">
+                        <li ng-class="{'active' : isActive('/productinformation') }"><a href="#/productinformation">Product Information</a></li>
+                        <li id="productuse"  ng-class="{'active' : isActive('/productuse') }"><a href="#/productuse">Product Use</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div class="main-container" ng-view></div>
+
+        <script src="js/jquery/jquery.min.js"></script>
+        <script src="js/jquery/jquery-ui.min.js"></script>
+        <script src="js/jquery/jquery.ui.touch-punch.min.js"></script>
+        <script src="js/bootstrap/bootstrap.min.js"></script>
+        <script src="js/angular/angular.min.js"></script>
+        <script src="js/angular/angular-route.min.js"></script>
+        <script src="js/angular/angular-touch.min.js"></script>
+        <script src="js/angular/angular-dragdrop.min.js"></script>
+        <script src="js/jquery/ui-bootstrap-tpls-0.13.0.min.js"></script>
+        <script src="js/jquery/ngDialog.min.js"></script>
+
+        <script src="js/Chart.js"></script>
+
+        <script src="js/hammer/hammer.min.js"></script>
+        <script src="js/hammer/angular.hammer.min.js"></script>
+        <script src="js/fastclick.js"></script>
+
+        <script src="js/controllers/curvedstraight.controllers.js"></script>
+
+        <script src="js/curvedstraight.app.js"></script>
+        <script src="js/controllers/productinformation.controllers.js"></script>
+        <script src="js/controllers/productuse.controllers.js"></script>
+        <script src="js/controllers/consistencysealoverController.controllers.js"></script>
+        <script>
+                                    $(document).ready(function () {
+                                        $('#productuse').on('click', function () {
+                                            setTimeout(function () {
+                                                angular.element('.handle-glow').hide()
+                                                angular.element('.handle-glow').hide().delay(3000).show();
+                                            }, 500);
+                                        });
+                                    });
+        </script>
+    </body>
+</html>

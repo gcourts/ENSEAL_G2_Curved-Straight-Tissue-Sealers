@@ -1,0 +1,324 @@
+<!--
+Copyright (C) 2017 eProSoft America Inc - All Rights Reserved.
+
+All information contained herein is, and remains the property of eProSofrt America Inc. The intellectual and technical concepts contained herein are proprietary to eProSoft America Inc and may be covered by U.S. and Foreign Patents, patents in process, and are protected by trade secret or copyright law. Dissemination, Appropriation or Redistribution of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained from eProSoft America Inc
+-->
+
+<script>
+    $(document).ready(function () {
+        $('a[data-toggle="tab"]').on('hidden.bs.tab', function (e) {
+            $('video:not(:visible)').each(function () {
+                $(this).get(0).pause();
+            });
+        });
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            $('video:visible').each(function () {
+                $(this).get(0).play();
+                $(this).get(0).pause();
+                $(this).get(0).currentTime = 0;
+            });
+        });
+    });
+</script>
+<div role="tabpanel">
+    <div class="tab-content">
+        <div id="tab1" role="tabpanel" class="tab-pane fade in active">
+            <div class="tab-content">
+                <div id="portTab1" class="tab-pane fade in active">
+
+                    <div class="integrated_energy"  hm-panleft="moveTrigger($event, -1)" hm-panright="moveTrigger($event, 1)" ng-style="{'background-image': 'url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_'+energy_image_index+'.png)'}" style="width: 95vw; height: 86vh; background: no-repeat center center transparent; background-size: contain;">
+                        <div class="integrated-swipe" style="display: block; pointer-events: none;"></div>
+                    </div>                                                                                                                                                         
+                    <img class="handle-glow blinker" eta-touchstart="animateTrigger()" ng-show="energy_blink === 0" src="images/product_use/integrated_energy_activation_button/handle_glow.png" alt="" />
+                    <img class="lock-glow blinker" eta-touchstart="animateTriggerLock()" ng-show="energy_blink === 1" src="images/product_use/integrated_energy_activation_button/lock_glow.png" alt="" />
+                    <img class="swipe-fire" ng-show="energy_blink === 2" src="images/product_use/integrated_energy_activation_button/swipe_to_fire.png" alt="" />
+                    <img class="animation_reset" ng-click="energy_image_index = '00000'; energy_blink = 0; moveTriggerIndex = 60;"  src="images/restart.png" alt="">
+                    <audio id="integrated-audio" src="audio/super_click.mp3"></audio>
+
+                </div>
+                <div id="portTab2" class="tab-pane fade">
+                    <div class="stapleform-slider">
+                        <div>
+                            <img id="stapleSlideBarIndex" ng-src="{{stapleSlideImage|| 'images/product_use/sealing_experience/eagle_flexible_sealing_cycle_0000.png'}}" style="max-height: 100%; max-width: 100%; width: 1000px; height: 550px;"/>
+                        </div>
+                        <div id="stapleSlideBar"></div>
+                        <audio id="audio1" src="audio/e-enseal-activation1.mp3"></audio>
+                        <audio id="audio2" src="audio/e-enseal-activation2.mp3"></audio>
+                        <audio id="audio3" src="audio/e-enseal-activation3.mp3"></audio>
+                        <div class="dragslider-text">Drag Slider to Advance I-Blade&reg;</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Better Grip Nav tabs -->
+            <div class="thirdLevelTabs" role="tabpanel">
+                <ul class="redroundtabs" role="tablist">
+                    <li class="proptab active" data-toggle="tab" data-target="#portTab1"><a role="tab" data-toggle="tab" data-target="#portTab1" class="ui-btn-active"><span>Integrated Energy Activation Button & 1-BLADE&reg; Release</span></a></li>
+                    <li class="proptab" data-toggle="tab" data-target="#portTab2"><a role="tab" data-toggle="tab" data-target="#portTab2"><span>Flexible Sealing Cycle</span></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="tab2" role="tabpanel" class="tab-pane fade text-center">
+            <div class="square-boxs row">
+                <h2 class="text-left">ENSEAL&reg; Troubleshooting</h2>
+                <div style="display: table;" class="col-sm-3 hor-offset-2 gradient-color text-center" ng-click="imageOpen('lg', 'images/product_use/03_reactivate.png')">
+                    <span class="gly-icon warning-icon"></span>
+                    <div style="display: table-cell;  vertical-align: middle;">
+                        <ul class="yellow-box">
+                            <li>Reactivate</li>
+                            <li></li>
+                            <li>Two switch activations detected</li>
+                            <li>HANDSWITCH</li>
+                            <li>FOOTSWITCH</li>
+                            <li>Reactivate instrument to continue.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="display: table;" class="col-sm-2 hor-offset-2 gradient-color text-center" ng-click="imageOpen('lg', 'images/product_use/06_generator_failure.png')">
+                    <span class="gly-icon warning-icon"></span>
+                    <div style="display: table-cell;  vertical-align: middle;">                    
+                        <ul class="yellow-box">
+                            <li>Restart Generator</li>
+                            <li></li>
+                            <li>Restart generator to reset system and continue</li>
+                            <li>If problem persists, please contact</li>
+                            <li>Yes EES representative</li>
+                        </ul>
+                    </div>
+                </div>
+                <div  style="display: table;" class="col-sm-2 hor-offset-2 gradient-color text-center" ng-click="imageOpen('lg', 'images/product_use/07_generator_overheating.png')">
+                    <span class="gly-icon warning-icon"></span>
+                    <div style="display: table-cell;  vertical-align: middle;">
+                        <ul class="yellow-box">
+                            <li>Generator Overheating</li>
+                            <li></li>
+                            <li>Remove any obstructions from air vents.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="display: table;"  class="col-sm-2 hor-offset-2 gradient-color text-center" ng-click="imageOpen('lg', 'images/product_use/08_software_upgrade.png')">
+                    <span class="gly-icon warning-icon"></span>
+                    <div style="display: table-cell;  vertical-align: middle;">
+                        <ul class="yellow-box">
+                            <li>Software Upgrade</li>
+                            <li>Required to Run Device</li>
+                            <li>Please contact your EES representative</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="display: table;"  class="col-sm-2 hor-offset-2 gradient-color text-center" ng-click="imageOpen('lg', 'images/product_use/09_general_issue.png')">
+                    <span class="gly-icon warning-icon"></span>
+                    <div style="display: table-cell;  vertical-align: middle;">
+                        <ul class="yellow-box">
+                            <li>Please contact your</li>
+                            <li>EES representative</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="display: table;"  class="col-sm-2 hor-offset-2 gradient-color text-center" ng-click="imageOpen('lg', 'images/product_use/20_short_error.png')">
+                    <span class="gly-icon warning-icon"></span>
+                    <div style="display: table-cell;  vertical-align: middle;">
+                        <ul class="yellow-box">
+                            <li>Reposition Jaws</li>
+                            <li>and Reactivate</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="display: table;"  class="col-sm-2 hor-offset-2 gradient-color text-center" ng-click="imageOpen('lg', 'images/product_use/21_replace_instrument.png')">                
+                    <span class="gly-icon doublewarning-icon"></span>
+                    <div style="display: table-cell;  vertical-align: middle;">
+                        <ul class="yellow-box">
+                            <li>Replace instrument</li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="display: table;"  class="col-sm-2 hor-offset-2 gradient-color text-center" ng-click="imageOpen('lg', 'images/product_use/22_instrument_error.png')">
+                    <span class="gly-icon warning-icon"></span>
+                    <div style="display: table-cell;  vertical-align: middle;">
+                        <ul class="yellow-box">
+                            <li>Replace instrument</li>
+                            <li></li>
+                            <li>Instrument error detected.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="display: table;"  class="col-sm-2 hor-offset-2 gradient-color text-center" ng-click="imageOpen('lg', 'images/product_use/23_reactivate.png')">
+                    <span class="gly-icon doublewarning-icon"></span>
+                    <div style="display: table-cell;  vertical-align: middle;">
+                        <ul class="yellow-box">
+                            <li></li>
+                            <li></li>
+                            <li class="reativate">Close jaws on tissue and reactivate.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p >See the GEN11 IFU for a complete list of potential troubleshooting screens</p>
+        </div>
+    </div>
+
+    <div id="submenu" role="tabpanel">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="mytab active"  data-toggle="tab"><a data-target="#tab1"  role="tab" data-toggle="tab" class="ui-btn-active"><span>Sealing Experience</span></a></li>
+            <li role="presentation" class="mytab"  data-toggle="tab"><a data-target="#tab2" role="tab" data-toggle="tab"><span>Troubleshooting</span></a></li>
+        </ul>
+    </div>
+</div>
+
+
+<div style="width: 1px; height: 1px;">
+
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00150.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00149.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00148.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00147.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00146.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00145.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00144.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00143.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00142.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00141.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00140.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00139.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00138.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00137.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00136.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00135.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00134.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00133.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00132.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00131.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00130.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00129.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00128.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00127.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00126.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00125.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00124.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00123.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00122.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00121.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00120.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00119.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00118.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00117.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00116.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00115.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00114.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00113.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00112.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00111.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00110.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00109.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00108.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00107.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00106.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00105.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00104.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00103.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00102.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00101.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00100.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00099.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00098.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00097.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00096.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00095.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00094.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00093.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00092.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00091.png);" >  </span>
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00000.png);" >  </span>
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00001.png);" >  </span>
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00002.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00003.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00004.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00005.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00006.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00007.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00008.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00009.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00010.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00011.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00012.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00013.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00014.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00015.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00016.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00017.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00018.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00019.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00020.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00021.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00022.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00023.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00024.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00025.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00026.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00027.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00028.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00029.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00030.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00031.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00032.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00033.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00034.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00035.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00036.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00037.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00038.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00039.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00040.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00041.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00042.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00043.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00044.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00045.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00046.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00047.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00048.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00049.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00050.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00051.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00052.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00053.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00054.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00055.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00056.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00057.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00058.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00059.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00060.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00061.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00062.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00063.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00064.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00065.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00066.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00067.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00068.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00069.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00070.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00071.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00072.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00073.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00074.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00075.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00076.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00077.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00078.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00079.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00080.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00081.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00082.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00083.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00084.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00085.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00086.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00087.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00088.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00089.png);" >  </span> 
+    <span style="background-image: url(images/product_use/integrated_energy_activation_button/eagle_ieabib/eagle_ieabibr_00090.png);" >  </span> 
+    
+</div>
